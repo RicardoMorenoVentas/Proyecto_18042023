@@ -1,0 +1,5 @@
+<h2>Formulario de nuevo pedido:</h2>
+<p><small>Nombre cliente*</small><br> <input type="text" [(ngModel)]="cliente.nombre"></p>
+<p><small>Cantidad productos*</small><br> <input type="number" [(ngModel)]="pedido_act.cantidadProd"></p>
+<p><small>Importe total*</small><br> <input type="number" [(ngModel)]="pedido_act.importeTotal"></p>
+<button (click)="mandarPedido()">Mandar pedido</button>

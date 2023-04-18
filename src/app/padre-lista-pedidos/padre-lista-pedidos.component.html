@@ -1,0 +1,27 @@
+<app-hijo-form-pedidos
+  (evMPedido)="recibirLista($event)"
+></app-hijo-form-pedidos>
+<br>
+
+<ng-template #lista_vacia>
+  <h3>Está la lista vacia</h3>
+</ng-template>
+
+<div *ngIf="lista_pedidos.length > 0; else lista_vacia">
+  <table>
+    <tr>
+      <th>ID pedido</th>
+      <th>ID cliente</th>
+      <th>Nombre cliente</th>
+      <th>Cantidad productos</th>
+      <th>Importe total</th>
+    </tr>
+    <tr *ngFor="let index of lista_pedidos">
+      <td>{{ index.id }}</td>
+      <td>{{ index.cliente.id }}</td>
+      <td>{{ index.cliente.nombre }}</td>
+      <td>{{ index.cantidadProd }}</td>
+      <td>{{ index.importeTotal }}</td>
+    </tr>
+  </table>
+</div>
