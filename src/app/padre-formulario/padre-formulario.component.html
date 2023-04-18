@@ -1,0 +1,51 @@
+<h2>Formulario de producto</h2>
+<p>
+  <small>Nombre de producto*</small><br /><input
+    type="text"
+    [(ngModel)]="producto_act.nombre"
+  />
+</p>
+<p>
+  <small>Cantidad*</small><br /><input
+    type="number"
+    [(ngModel)]="producto_act.canitad_producto"
+  />
+</p>
+<p>
+  <small>Precio unitario*</small><br /><input
+    type="number"
+    [(ngModel)]="producto_act.precio"
+  />
+</p>
+<p>
+  <small>Tipo de alimento / producto*</small>
+  <br />
+  <select [(ngModel)]="producto_act.tipo_alimento">
+    <option *ngFor="let index of opciones_producto" [value]="index">
+      {{ index }}
+    </option>
+  </select>
+</p>
+<p>
+  <small>¿Es perecedero?*</small>
+  <br />
+  <select [(ngModel)]="producto_act.alimento_perecedero">
+    <option
+      *ngFor="let index of opciones_perecedero"
+      [value]="index"
+    >
+      {{ index }}
+    </option>
+  </select>
+</p>
+<p>
+  <small>¿Es prodcuto de limpieza?*</small>
+  <br />
+  <select [(ngModel)]="producto_act.limpieza">
+    <option *ngFor="let index of opciones_limpieza" [value]="index">
+      {{ index }}
+    </option>
+  </select>
+</p>
+<button (click)="pushProducto()">Mandar producto</button>
+<app-hijo-lista-productos [lista_recibida]="lista_productos"></app-hijo-lista-productos>

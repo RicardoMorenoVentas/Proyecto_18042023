@@ -1,0 +1,26 @@
+<ng-template #nohay>
+  <h4>No hay nada aún</h4>
+</ng-template>
+<br />
+<div *ngIf="lista_recibida.length > 0; else nohay">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Tipo</th>
+      <th>Perecedero</th>
+      <th>Limpieza</th>
+    </tr>
+    <tr *ngFor="let index of lista_recibida">
+      <td>{{ index.id }}</td>
+      <td>{{ index.nombre }}</td>
+      <td>{{ index.canitad_producto }}</td>
+      <td>{{ index.precio }}</td>
+      <td>{{ index.tipo_alimento }}</td>
+      <td>{{ index.alimento_perecedero }}</td>
+      <td>{{ index.limpieza }}</td>
+    </tr>
+  </table>
+</div>
